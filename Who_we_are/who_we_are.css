@@ -1,0 +1,638 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.since-text {
+    font-size: 12px;
+    color: #666;
+    position: absolute;
+    top: 10px;
+    left: 380px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e21f26;
+}
+
+.goldiee-queen {
+    background-color: #b10016;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.cart-icon {
+    margin-left: 20px;
+    position: relative;
+}
+
+.cart-icon a {
+    text-decoration: none;
+    color: #e21f26;
+    font-size: 24px;
+}
+
+.online-store {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #e21f26;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Dropdown Styles (Previous dropdown CSS remains the same) */
+/* ... (paste entire dropdown CSS from previous document) */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-25px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    pointer-events: none;
+    border-top: 3px solid #e21f26;
+    overflow: hidden;
+}
+
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    z-index: -1;
+    border-top: 3px solid #e21f26;
+    border-left: 3px solid #e21f26;
+}
+
+.dropdown-content li {
+    display: block;
+    width: 100%;
+    transform: translateY(-15px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.dropdown-content li:nth-child(1) { transition-delay: 0.15s; }
+.dropdown-content li:nth-child(2) { transition-delay: 0.25s; }
+.dropdown-content li:nth-child(3) { transition-delay: 0.35s; }
+.dropdown-content li:nth-child(4) { transition-delay: 0.45s; }
+.dropdown-content li:nth-child(5) { transition-delay: 0.55s; }
+.dropdown-content li:nth-child(6) { transition-delay: 0.65s; }
+.dropdown-content li:nth-child(7) { transition-delay: 0.75s; }
+.dropdown-content li:nth-child(8) { transition-delay: 0.85s; }
+
+.dropdown-content li a {
+    color: #333;
+    padding: 16px 22px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    transition: all 0.6s ease;
+    border-left: 5px solid transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dropdown-content li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(226, 31, 38, 0.1), rgba(226, 31, 38, 0.05));
+    transition: all 0.8s ease;
+    z-index: -1;
+}
+
+
+.dropdown::after {
+    content: '';
+    position: absolute;
+    height: 15px; /* Buffer height - adjust if needed */
+    width: 100%;
+    bottom: -15px;
+    left: 0;
+}
+.dropdown-content li:nth-child(1) a:hover { background-color: rgba(255, 215, 0, 0.1); border-left-color: #FFD700; }
+.dropdown-content li:nth-child(2) a:hover { background-color: rgba(204, 136, 0, 0.1); border-left-color: #CC8800; }
+.dropdown-content li:nth-child(3) a:hover { background-color: rgba(160, 80, 0, 0.1); border-left-color: #A05000; }
+.dropdown-content li:nth-child(4) a:hover { background-color: rgba(226, 31, 38, 0.1); border-left-color: #E21F26; }
+.dropdown-content li:nth-child(5) a:hover { background-color: rgba(204, 204, 0, 0.1); border-left-color: #CCCC00; }
+.dropdown-content li:nth-child(6) a:hover { background-color: rgba(139, 139, 0, 0.1); border-left-color: #8B8B00; }
+.dropdown-content li:nth-child(7) a:hover { background-color: rgba(189, 183, 107, 0.1); border-left-color: #BDB76B; }
+.dropdown-content li:nth-child(8) a:hover { background-color: rgba(205, 133, 63, 0.1); border-left-color: #CD853F; }
+
+.dropdown-content li a:hover {
+    color: #e21f26;
+    padding-left: 30px;
+    font-weight: 600;
+}
+
+.dropdown-content li a:hover::before {
+    left: 0;
+}
+
+.dropdown-content li a:hover::after {
+    width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto; /* Make sure this is set to auto */
+}
+
+.dropdown:hover .dropdown-content li {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Adjust for mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        transform: none;
+        left: 0;
+    }
+    
+    .dropdown-content::before {
+        display: none;
+    }
+}
+.dropdown > a {
+    padding-bottom: 15px; /* Increase this value if needed */
+}
+.dropdown-content {
+    /* Your existing styles */
+    transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1), 
+                visibility 1s cubic-bezier(0.215, 0.61, 0.355, 1), 
+                transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.dropdown:not(:hover) .dropdown-content {
+    transition-delay: 0.3s; /* Adds a delay before closing */
+}
+
+.hero-banner {
+    position: relative;
+    height: 500px;
+    background-image: url('../images/Who_we_are_img1.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-banner h1 {
+    color: white;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.company-profile {
+    display: flex;
+    padding: 50px 10%;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.company-profile-image {
+    max-width: 400px;
+}
+
+.company-profile-text {
+    flex: 1;
+}
+
+.company-profile-text h2 {
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.company-profile-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    /* background-color: red; */
+}
+
+.company-profile-text p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Spices and Food Products Section */
+.spices-food-section .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 50px;
+    padding: 50px 10%;
+}
+
+.spices-food-section .section-text {
+    flex: 1;
+}
+
+.spices-food-section .section-image {
+    flex: 1;
+}
+
+.spices-food-section .section-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-header {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-header .red-text {
+    color: #ff0000;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    /* background-color: #ff0000; */
+}
+
+.image-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    padding: 0 10%;
+}
+
+.grid-item {
+    flex: 1;
+    max-width: 80%;
+}
+
+.grid-item img {
+    width: 100%;
+    /* height: auto; */
+    object-fit: cover;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .company-profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .company-profile-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .spices-food-section .section-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .spices-food-section .section-text,
+    .spices-food-section .section-image {
+        width: 100%;
+    }
+
+    .image-grid {
+        flex-direction: column;
+    }
+
+    .grid-item {
+        max-width: 100%;
+    }
+}
+
+/* Manufacturing Section Css */
+
+/* Manufacturing Facility Section */
+.manufacturing-facility {
+    padding: 50px 0;
+    background-color: white;
+    position: relative;
+}
+
+.manufacturing-facility .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.manufacturing-facility .section-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.manufacturing-facility .section-header .red-text {
+    color: #ec3136;
+}
+
+.manufacturing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.manufacturing-grid .grid-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.manufacturing-grid .grid-item:hover {
+    transform: scale(1.05);
+}
+
+.manufacturing-grid .grid-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.manufacturing-grid .grid-item-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(236, 49, 54, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .manufacturing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .manufacturing-grid {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+}
+/* Company Infrastructure Section */
+.company-infrastructure {
+    padding: 70px 0;
+    background-color: white;
+}
+
+.infrastructure-content {
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    gap: 50px;
+}
+
+.infrastructure-text {
+    flex: 1;
+}
+
+.infrastructure-text h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.infrastructure-text p {
+    color: #666;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.infrastructure-image {
+    flex: 1;
+}
+
+.infrastructure-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .infrastructure-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .infrastructure-text,
+    .infrastructure-image {
+        width: 100%;
+    }
+    
+    .infrastructure-image {
+        margin-bottom: 30px;
+    }
+}
+/* NEW CSS FOR CONTACT US SECTION */
+.contact-section {
+    padding: 60px 0;
+    background-color: #fff;
+    text-align: center;
+    background-color: white;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3) 2px, transparent 2px);
+  background-size: 25px 25px;
+}
+
+.contact-section h2 {
+    font-size: 48px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.us-red {
+    color: #e21f26;
+}
+
+.red-line-contact {
+    height: 3px;
+    width: 300px;
+    /* background-color: #e21f26; */
+    margin: 0 auto 50px;
+    /* background-image: linear-gradient(to right, #e21f26, transparent); */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-column {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.contact-column h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.contact-info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.contact-icon i {
+    font-size: 40px;
+    color: #ec3136;
+}
+.contact-icon i:hover {
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.contact-detail p {
+    font-size: 18px;
+    color: #392323;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+.foot{
+    text-decoration: none;
+    color: white;
+}
+.footer{
+    background-color: #252525;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+}
+.foot-para{
+    color: white;
+    min-width: 200px;
+
+}
