@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scrolling Image Sections</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            border: 5px solid black;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 1250px;
+        }
+        .container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+            display: flex;
+        }
+        .scroll {
+            display: flex;
+            white-space: nowrap;
+            animation: scrollLeft 20s linear infinite;
+        }
+        .reverse {
+            animation: scrollRight 20s linear infinite;
+        }
+        .container:hover .scroll, .container:hover .reverse {
+            animation-play-state: paused;
+        }
+        .scroll img {
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0;
+        }
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes scrollRight {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="scroll">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+            </div>
+            <div class="scroll">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+            </div>
+        </div>
+        <div class="container">
+            <div class="scroll reverse">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+            </div>
+            <div class="scroll reverse">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+            </div>
+        </div>
+        <div class="container">
+            <div class="scroll">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+            </div>
+            <div class="scroll">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+                <img src="Garam.png" alt="Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

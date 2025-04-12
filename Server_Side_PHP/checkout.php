@@ -67,10 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         foreach ($cartItems as $item) {
             $message .= "- " . $item['name'] . " x" . $item['quantity'] . 
-                       " ($" . number_format($item['price'] * $item['quantity'], 2) . ")\n";
+                       " (₹" . number_format($item['price'] * $item['quantity'], 2) . ")\n";
         }
         
-        $message .= "\nTotal Amount: $" . number_format($total, 2) . "\n\n";
+        $message .= "\nTotal Amount: ₹" . number_format($total, 2) . "\n\n";
         $message .= "You can track your order status at: http://localhost/CA2/Teer_Brand/Server_Side_PHP/order_details.php?id=" . $orderId . "\n\n";
         $message .= "Best regards,\nTeer Brand Team";
 
@@ -148,15 +148,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <tr>
                                             <td><?php echo htmlspecialchars($item['name']); ?></td>
                                             <td><?php echo $item['quantity']; ?></td>
-                                            <td>$<?php echo number_format($item['price'], 2); ?></td>
-                                            <td>$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
+                                            <td>₹<?php echo number_format($item['price'], 2); ?></td>
+                                            <td>₹<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
                                         </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <td colspan="3" class="text-end"><strong>Total:</strong></td>
-                                            <td><strong>$<?php echo number_format($total, 2); ?></strong></td>
+                                            <td><strong>₹<?php echo number_format($total, 2); ?></strong></td>
                                             <td></td>
                                         </tr>
                                     </tfoot>

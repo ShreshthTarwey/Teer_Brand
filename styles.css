@@ -388,7 +388,7 @@ nav ul li a:hover {
 }
 
 .goldiee-inline-logo {
-    height: 50px;
+    height: 150px;
     margin-left: 10px;
 }
 
@@ -544,23 +544,27 @@ nav ul li a:hover {
 .products-grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0;
-    width: 100%;
-    margin-top: 0;
-    /* No margin as the color bar acts as a separator */
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product-grid-item {
     position: relative;
-    height: 400px;
+    height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 20px;
-    overflow: hidden;
-    color: black;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product-grid-item:hover {
+    transform: translateY(-5px);
 }
 
 .product-image {
@@ -570,6 +574,7 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    overflow: visible;
 }
 
 .product-image img {
@@ -584,13 +589,17 @@ nav ul li a:hover {
 }
 
 .product-title {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     color: white;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
 /* Responsive Styles */
@@ -648,6 +657,22 @@ nav ul li a:hover {
     .stat-item {
         width: 50%;
         margin-bottom: 30px;
+    }
+
+    .products-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid-container {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -740,41 +765,6 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
-.awards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 30px;
-}
-
-.award-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 150px;
-    margin-bottom: 20px;
-}
-
-.award-item img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-    transition: transform 0.3s;
-}
-
-.award-item img:hover {
-    transform: scale(1.05);
-}
-
-.award-item p {
-    font-size: 14px;
-    color: #666;
-    text-align: center;
-    line-height: 1.4;
-}
 
 /* NEW CSS FOR CONTACT US SECTION */
 .contact-section {
@@ -1103,4 +1093,57 @@ nav ul li a:hover {
 .dropdown:not(:hover) .dropdown-content {
     transition-delay: 0.3s;
     /* Adds a delay before closing */
+}
+
+.quality-standards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.standard-item {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.standard-item:hover {
+    transform: translateY(-5px);
+}
+
+.standard-item i {
+    font-size: 40px;
+    color: #e21f26;
+    margin-bottom: 20px;
+}
+
+.standard-item h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.standard-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .quality-standards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .quality-standards {
+        grid-template-columns: 1fr;
+    }
 }
