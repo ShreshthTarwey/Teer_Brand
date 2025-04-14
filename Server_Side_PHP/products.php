@@ -235,7 +235,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../index.html">
                 <i class="fas fa-pepper-hot me-2"></i>Teer Brand
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -319,23 +319,23 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <div class="input-group mb-3">
                                     <button class="btn btn-outline-secondary quantity-control" 
                                             type="button" 
-                                            onclick="updateQuantity(<?php echo $index; ?>, 'decrease')">
+                                            onclick="updateQuantity(<?php echo $product['product_id']; ?>, 'decrease')">
                                         <i class="fas fa-minus"></i>
                                     </button>
                                     <input type="number" 
                                            class="form-control text-center" 
-                                           id="quantity_<?php echo $index; ?>" 
+                                           id="quantity_<?php echo $product['product_id']; ?>" 
                                            value="1" 
                                            min="1" 
                                            max="<?php echo $product['stock']; ?>">
                                     <button class="btn btn-outline-secondary quantity-control" 
                                             type="button" 
-                                            onclick="updateQuantity(<?php echo $index; ?>, 'increase')">
+                                            onclick="updateQuantity(<?php echo $product['product_id']; ?>, 'increase')">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
                                 <button class="btn btn-custom text-white w-100" 
-                                        onclick="addToCart(<?php echo $index; ?>)">
+                                        onclick="addToCart(<?php echo $product['product_id']; ?>)">
                                     <i class="fas fa-cart-plus me-2"></i>Add to Cart
                                 </button>
                             <?php else: ?>
@@ -419,13 +419,21 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         function addToCart(productId) {
             const quantity = document.getElementById(`quantity_${productId}`).value;
-            const product = <?php echo json_encode($products); ?>[productId];
+            const products = <?php echo json_encode($products); ?>;
+            const product = products.find(p => p.product_id == productId);
+            
+            if (!product) {
+                console.error('Product not found:', productId);
+                $('#errorToastBody').text('Error: Product not found');
+                $('#errorToast').toast('show');
+                return;
+            }
             
             $.ajax({
                 url: 'ajax/add_to_cart.php',
                 method: 'POST',
                 data: {
-                    product_id: productId,
+                    product_id: product.product_id,
                     quantity: quantity,
                     name: product.name,
                     price: product.price
@@ -443,6 +451,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             $('#successToastBody').text('Product added to cart successfully!');
                             $('#successToast').toast('show');
                         } else {
+                            console.error('Server error:', result.error);
                             $('#errorToastBody').text(result.error || 'Error adding product to cart.');
                             $('#errorToast').toast('show');
                         }

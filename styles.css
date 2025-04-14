@@ -851,13 +851,6 @@ nav ul li a:hover {
         margin-bottom: 40px;
     }
 
-    .awards-container {
-        justify-content: space-around;
-    }
-
-    .award-item {
-        width: 120px;
-    }
 }
 
 .foot {

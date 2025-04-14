@@ -92,7 +92,7 @@ $order = $orderItems[0]; // Get order details from first item
                                             <tr>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <img src="<?php echo htmlspecialchars($item['image_url']); ?>" 
+                                                        <img src="<?php echo str_replace('images/', '../images/', htmlspecialchars($item['image_url'])); ?>" 
                                                              alt="<?php echo htmlspecialchars($item['name']); ?>" 
                                                              style="width: 50px; height: 50px; object-fit: cover;">
                                                         <span class="ms-2"><?php echo htmlspecialchars($item['name']); ?></span>
