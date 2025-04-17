@@ -636,3 +636,72 @@ nav ul li a:hover {
     min-width: 200px;
 
 }
+
+/* Mobile Menu Styles */
+@media screen and (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1000;
+        background: none;
+        border: none;
+        color: #333;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .nav-actions {
+        margin: 20px 0 0 0;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .goldiee-queen {
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .cart-icon {
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        padding-left: 20px;
+    }
+}
