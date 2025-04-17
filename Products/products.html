@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="products_style.css">
+    <script src="products.js" defer></script>
 </head>
 
 <body>
@@ -17,8 +18,14 @@
             <img src="../images/Teer_Brand_Main_Logo.png" alt="Teer Brand Logo">
             <span class="since-text">SINCE 1992</span>
         </div>
-        <nav>
-            <ul>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="main-nav">
+            <button class="close-menu-btn" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="nav-links">
                 <li><a href="../index.html">HOME</a></li>
                 <li><a href="../Who_we_are/who_we_are.html">WHO WE ARE</a></li>
                 <li class="dropdown">
@@ -35,10 +42,12 @@
                 <li><a href="../Coming Soon/Coming_soon.html">NEWS</a></li>
                 <li><a href="../Contact_us/contact_us.html">CONTACT US</a></li>
             </ul>
-            <a href="#" class="goldiee-queen">TEER EVENT</a>
-            <div class="cart-icon">
-                <a href="#">🛒</a>
-                <span class="online-store">ONLINE STORE</span>
+            <div class="nav-actions">
+                <a href="#" class="goldiee-queen">TEER EVENT</a>
+                <div class="cart-icon">
+                    <a href="#">🛒</a>
+                    <span class="online-store">ONLINE STORE</span>
+                </div>
             </div>
         </nav>
     </header>
