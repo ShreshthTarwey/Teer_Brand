@@ -270,6 +270,9 @@ foreach ($cartItems as $item) {
                             <i class="fas fa-history me-1"></i> Order History
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact_form.php">Get in Touch</a>
+                    </li>
                 </ul>
             </div>
         </div>

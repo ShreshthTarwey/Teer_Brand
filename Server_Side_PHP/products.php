@@ -263,6 +263,11 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <i class="fas fa-history me-1"></i> Order History
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact_form.php">
+                            <i class="fas fa-envelope me-1"></i> Get in Touch
+                        </a>
+                    </li>
                     <?php if(isset($_SESSION['user_id'])): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php">
