@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
     // Get all product cards
     const productCards = document.querySelectorAll('.product-card');
@@ -93,16 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
             this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-        });
-    });
-    
-    // Handle search icon clicks
-    const searchIcons = document.querySelectorAll('.icon.search');
-    searchIcons.forEach(icon => {
-        icon.addEventListener('click', function(e) {
-            e.preventDefault();
-            const productName = this.closest('.overlay').querySelector('h3').textContent;
-            alert(`Searching for ${productName}...`);
         });
     });
     
