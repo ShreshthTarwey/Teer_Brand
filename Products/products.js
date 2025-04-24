@@ -49,10 +49,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to filter products based on category
     function filterProducts(category) {
+        // Create a Set to track unique product names
+        const uniqueProducts = new Set();
+        
         productCards.forEach(card => {
             if (category === 'ALL') {
-                card.style.display = 'block';
-                card.classList.add('animate__animated', 'animate__fadeIn');
+                // Get the product name from the h3 element
+                const productName = card.querySelector('.animated-text').textContent;
+                
+                // Only show the product if we haven't seen it before
+                if (!uniqueProducts.has(productName)) {
+                    card.style.display = 'block';
+                    card.classList.add('animate__animated', 'animate__fadeIn');
+                    uniqueProducts.add(productName);
+                } else {
+                    card.style.display = 'none';
+                }
             } else if (card.dataset.category === category) {
                 card.style.display = 'block';
                 card.classList.add('animate__animated', 'animate__fadeIn');
